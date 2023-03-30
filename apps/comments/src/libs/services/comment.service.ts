@@ -8,6 +8,7 @@ const commentRepository = new CommentRepository();
 
 interface CommentServiceType {
     getComments: () => Promise<Comment[]>;
+    getCommentByPostIdAndCommentId: (postId: string, commentId: string) => Promise<Comment>;
     getCommentsByPostId: (postId: string, sortOrder: string, limit: number) => Promise<Comment[]>;
     getCommentsByAuthorId: (authorId: string, sortOrder: string, limit: number) => Promise<Comment[]>;
     createComment: (comment: Comment) => Promise<Comment>;
@@ -18,6 +19,11 @@ export class CommentService implements CommentServiceType {
     @logAsync()
     async getComments(): Promise<Comment[]> {
         return await commentRepository.getComments();
+    }
+
+    @logAsync()
+    async getCommentByPostIdAndCommentId(postId: string, commentId: string): Promise<Comment> {
+        return await commentRepository.getCommentByPostIdAndCommentId(postId, commentId);
     }
 
     @logAsync()

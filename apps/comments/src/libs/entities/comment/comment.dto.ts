@@ -5,7 +5,7 @@ export class CommentDto {
     postId!: string;
     
     @AutoMap()
-    commentId?: string;
+    commentId!: string;
 
     @AutoMap()
     authorId!: string;
