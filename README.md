@@ -4,7 +4,7 @@ This repository contains an example on how to use the Dynamoose library to commu
 # Illustration
 The diagram below illustrates the different components and how they interact with each other:
 
-![Diagram](diagram.png)
+![Diagram](docs/diagram.png)
 
 # Setup
 1. Setup AWS & Serverless, make sure you have an .aws directory in your user home folder that contains your credentials and config.
