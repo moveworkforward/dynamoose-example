@@ -3,6 +3,7 @@ This repository contains an example on how to use the Dynamoose library to commu
 
 # Illustration
 The diagram below illustrates the different components and how they interact with each other:
+
 ![Diagram](diagram.png)
 
 # Setup
