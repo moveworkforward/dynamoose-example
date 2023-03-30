@@ -56,3 +56,8 @@ The diagram below illustrates the different components and how they interact wit
     cd apps/comments
     npm run dev --stage=personal
     ```
+
+# Links
+
+* Dynamoose Documentation: https://dynamoosejs.com/
+* NestJS Dynamoose Implementation: https://blog.logrocket.com/nestjs-data-dynamoose/
