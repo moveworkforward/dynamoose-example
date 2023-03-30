@@ -56,13 +56,9 @@ export const getComments = async (): Promise<CommentDto[]> => {
     return commentDtos;
 }
 
-
-
-
-
 /* Define Test Data */
 
-const comment1Data: any = {
+const comment1Data: CommentDto = {
     postId: random_uuid(),
     authorId: random_uuid(),
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in pellentesque nibh, lacinia ultricies enim.",
@@ -73,7 +69,7 @@ const comment1Data: any = {
     ]
 }
 
-const comment2Data: any = {
+const comment2Data: CommentDto = {
     postId: comment1Data.postId,
     authorId: random_uuid(),
     text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in pellentesque nibh, lacinia ultricies enim.",
@@ -92,7 +88,7 @@ createComment(comment1Data)
     .then(() => createComment(comment2Data))
     // Update the Second Comment for the Post
     .then((commentDto: CommentDto) => {
-        const updateCommentData: any = {
+        const updateCommentData: CommentDto = {
             postId: commentDto.postId,
             commentId: commentDto.commentId,
             authorId: commentDto.authorId,
