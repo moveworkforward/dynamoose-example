@@ -1,5 +1,5 @@
 # Description
-This repository contains an example on how to use the Dynamoose library to communicate with DynamoDB.
+This repository contains an example on how to use the Dynamoose library (https://dynamoosejs.com/getting_started/Introduction) to communicate with DynamoDB.
 
 # Illustration
 The diagram below illustrates the different components and how they interact with each other:
