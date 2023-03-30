@@ -1,0 +1,26 @@
+{
+    "extends": "@tsconfig/node-lts-strictest/tsconfig.json",
+    "compilerOptions": {
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "preserveConstEnums": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "exactOptionalPropertyTypes": false,
+        "noUnusedParameters": false,
+        "noUncheckedIndexedAccess": false,
+        "noPropertyAccessFromIndexSignature": false,
+        "importsNotUsedAsValues": "remove"
+    },
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        "transpileOnly": true,
+        "sourceMap": true
+    }
+}

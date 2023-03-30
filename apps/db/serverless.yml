@@ -1,0 +1,48 @@
+service: example-db
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  stage: ${env:STAGE, 'dev'}
+  region: ${env:AWS_REGION, 'us-east-1'}
+  memorySize: 128
+  timeout: 10
+  deploymentBucket:
+    name: ${self:provider.region}.${env:ACCOUNT_ID}.deploys.${self:service}
+  versionFunctions: false
+  stackName: "${self:provider.stage}-${self:service}"
+  environment:
+    STAGE: ${self:provider.stage}
+    REGION: ${self:provider.region}
+    ACCOUNT_ID: ${env:ACCOUNT_ID}
+  stackTags:
+    SERVICE: "${self:service}"
+    REGION: "${self:provider.region}"
+
+resources:
+  Resources:
+    comments:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: ${self:provider.stackName}-comments
+        AttributeDefinitions:
+          - AttributeName: postId
+            AttributeType: S
+          - AttributeName: commentId
+            AttributeType: S
+          - AttributeName: authorId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: postId
+            KeyType: HASH
+          - AttributeName: commentId
+            KeyType: RANGE
+        GlobalSecondaryIndexes:
+          - IndexName: gsiAuthorIdIndex
+            KeySchema:
+              - AttributeName: authorId
+                KeyType: HASH
+            Projection:
+              ProjectionType: "KEYS_ONLY"
+        BillingMode: PAY_PER_REQUEST
