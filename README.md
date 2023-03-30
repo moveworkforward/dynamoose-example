@@ -1,6 +1,10 @@
 # Description
 This repository contains an example on how to use the Dynamoose library to communicate with DynamoDB.
 
+# Illustration
+The diagram below illustrates the different components and how they interact with each other:
+![Diagram](diagram.png)
+
 # Setup
 1. Setup AWS & Serverless, make sure you have an .aws directory in your user home folder that contains your credentials and config.
 2. Duplicate the .env.template file based on the stage and set the variable values:
